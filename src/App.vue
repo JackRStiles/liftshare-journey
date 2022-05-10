@@ -1,30 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <header class="has-background-primary">
+    <router-link to="/journey">liftshare</router-link>
+  </header>
+  <div class="columns">
+    <div class="column m-4 is-one-quarter-desktop">
+      <router-view />
+    </div>
+    <div class="column is-hidden-touch"></div>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "@/assets/base.css";
+
+header {
+  padding: 20px;
+  color: #fff;
+  font-weight: 600;
 }
 
-nav {
-  padding: 30px;
+a {
+  color: #fff;
+  font-size: 1.5rem;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: #fff;
 }
 </style>
