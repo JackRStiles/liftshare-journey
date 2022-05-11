@@ -9,25 +9,38 @@ export default {
 </script>
 
 <template>
-  <div id="wrapper">
-    <div class="columns">
-      <div class="column">
-        <h1 class="mb-1">Add Your Journey</h1>
-        <p>
-          Whether you are looking to Liftshare as a driver or a passenger,
-          listing your journey is the best way to find a match.
-        </p>
-      </div>
+  <div class="columns">
+    <div class="column">
+      <h1 class="mb-1">Add Your Journey</h1>
+      <p>
+        Whether you are looking to Liftshare as a driver or a passenger, listing
+        your journey is the best way to find a match.
+      </p>
     </div>
-    <div class="columns">
-      <div class="column">
-        <JourneyForm />
-      </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <JourneyForm />
     </div>
-    <div class="columns navigation">
-      <div class="column has-text-right">
-        <router-link class="button is-primary" to="/details">Next</router-link>
-      </div>
+  </div>
+  <div class="columns navigation">
+    <div class="column has-text-right">
+      <router-link class="button is-primary" to="/details">Next</router-link>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <article class="message is-warning">
+        <div class="message-body">
+          <p><strong>Warning From The Developer</strong></p>
+          <p>
+            Make sure you have added a valid Google Maps API script tag to the
+            index.html page otherwise some features may not work.
+          </p>
+          <br />
+          <p>Check the <a href="">Readme on Github</a> for more information.</p>
+        </div>
+      </article>
     </div>
   </div>
 </template>
@@ -40,9 +53,5 @@ h1 {
 
 a.button:hover {
   text-decoration: none;
-}
-
-#wrapper {
-  height: calc(100vh - 108px);
 }
 </style>

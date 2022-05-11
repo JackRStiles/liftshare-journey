@@ -3,10 +3,11 @@
     <label class="label">Journey start</label>
     <div class="control">
       <input
+        id="origin"
         class="input"
         type="text"
         placeholder="e.g. Postcode, Street Name"
-        v-model="journey.origin"
+        @change="updateOrigin"
       />
     </div>
   </div>
@@ -14,10 +15,11 @@
     <label class="label">Destination</label>
     <div class="control">
       <input
+        id="destination"
         class="input"
         type="text"
         placeholder="e.g. Postcode, Street Name"
-        v-model="journey.destination"
+        v-model.lazy="journey.destination"
       />
     </div>
   </div>
@@ -37,6 +39,39 @@ export default {
   setup() {
     const journey = useJourneyStore();
     return { journey };
+  },
+  mounted() {
+    // eslint-disable-next-line
+    var originAC = new google.maps.places.Autocomplete(
+      document.getElementById("origin")
+    );
+
+    originAC.setComponentRestrictions({
+      country: ["gb"],
+    });
+
+    // eslint-disable-next-line
+    var destinationAC = new google.maps.places.Autocomplete(
+      document.getElementById("destination")
+    );
+
+    destinationAC.setComponentRestrictions({
+      country: ["gb"],
+    });
+  },
+  methods: {
+    updateOrigin() {
+      let value = document.getElementById("origin").value;
+      this.journey.$patch({
+        origin: value,
+      });
+    },
+    updateDestination() {
+      let value = document.getElementById("destination").value;
+      this.journey.$patch({
+        destination: value,
+      });
+    },
   },
 };
 </script>

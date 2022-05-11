@@ -1,12 +1,24 @@
+<script>
+import MapDisplay from "@/components/MapDisplay.vue";
+
+export default {
+  components: {
+    MapDisplay,
+  },
+};
+</script>
+
 <template>
   <header class="has-background-primary">
     <router-link to="/journey">liftshare</router-link>
   </header>
-  <div class="columns">
-    <div class="column m-4 is-one-quarter-desktop">
+  <div id="wrapper" class="columns m-0">
+    <div class="column is-one-quarter-desktop">
       <router-view />
     </div>
-    <div class="column is-hidden-touch"></div>
+    <div class="column is-hidden-touch p-0">
+      <MapDisplay />
+    </div>
   </div>
 </template>
 
@@ -19,7 +31,7 @@ header {
   font-weight: 600;
 }
 
-a {
+header a {
   color: #fff;
   font-size: 1.5rem;
 }
@@ -29,5 +41,9 @@ a:focus,
 a:active {
   text-decoration: underline;
   color: #fff;
+}
+
+#wrapper {
+  height: calc(100vh - 76px);
 }
 </style>
