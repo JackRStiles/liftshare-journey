@@ -34,7 +34,13 @@ export default {
             index.html page otherwise some features may not work.
           </p>
           <br />
-          <p>Check the <a href="">Readme on Github</a> for more information.</p>
+          <p>
+            Check the
+            <a href="https://github.com/JackRStiles/liftshare-journey">
+              Readme on Github
+            </a>
+            for more information.
+          </p>
         </div>
       </article>
     </div>
