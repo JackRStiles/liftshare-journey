@@ -4,9 +4,14 @@ import { useJourneyStore } from "@/stores/journey";
 export default {
   name: "MapDisplay",
   setup() {
+    // Access the journey store and watch it for changes
     let journey = useJourneyStore();
     journey.$subscribe(() => {
-      if (journey.destination) {
+      // Checks to see if the origin and destination are in the store
+      if (journey.origin && journey.destination) {
+        // Assigns all the parameters and variables needed for the routing to
+        // work, then calls the directions service to see if the route is valid.
+        // If so, it will then render the route.
         // eslint-disable-next-line
         var directionsService = new google.maps.DirectionsService();
         // eslint-disable-next-line
@@ -31,11 +36,15 @@ export default {
             directionsRenderer.setDirections(result);
           }
         });
+
+        // TODO Add distance calculation and add the value to the store.
       }
     });
+    // Returns the journey store to be used in the component
     return { journey };
   },
   mounted() {
+    // Renders the initial map when the component is mounted.
     var center = { lat: 54.251186, lng: -4.463196 };
     var mapOptions = {
       zoom: 6,

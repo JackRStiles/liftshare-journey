@@ -10,7 +10,7 @@ export default {
 
 <template>
   <header class="has-background-primary">
-    <router-link to="/journey">liftshare</router-link>
+    <router-link to="/">liftshare</router-link>
   </header>
   <div id="wrapper" class="columns m-0">
     <div class="column is-one-quarter-desktop">

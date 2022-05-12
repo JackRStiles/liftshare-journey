@@ -23,11 +23,6 @@ export default {
       <JourneyForm />
     </div>
   </div>
-  <div class="columns navigation">
-    <div class="column has-text-right">
-      <router-link class="button is-primary" to="/details">Next</router-link>
-    </div>
-  </div>
   <div class="columns">
     <div class="column">
       <article class="message is-warning">
