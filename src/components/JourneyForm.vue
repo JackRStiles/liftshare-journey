@@ -6,7 +6,7 @@
   -->
   <form id="form" @submit.prevent="validateForm">
     <div class="field">
-      <label class="label">Journey start</label>
+      <label class="label">Origin</label>
       <div class="control">
         <input
           id="origin"
@@ -33,7 +33,7 @@
     </div>
     <div class="field">
       <label class="checkbox">
-        <input type="checkbox" v-model="journey.returnJourney" />
+        <input type="checkbox" v-model="journey.returnBool" />
         This is a return journey (round trip)
       </label>
     </div>
@@ -61,6 +61,14 @@ export default {
     return { journey };
   },
   mounted() {
+    if (this.journey.origin) {
+      document.getElementById("origin").value = this.journey.origin;
+    }
+
+    if (this.journey.destination) {
+      document.getElementById("destination").value = this.journey.destination;
+    }
+
     // Adds Google's auto complete feature to the two text fields and limits
     // them to GB locations.
     // eslint-disable-next-line
@@ -106,7 +114,7 @@ export default {
     },
     validateForm() {
       // TODO Add more form validation
-      router.push("/details");
+      router.push("/lift/details");
     },
   },
 };

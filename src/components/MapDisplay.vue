@@ -44,15 +44,14 @@ export default {
     return { journey };
   },
   mounted() {
-    // Renders the initial map when the component is mounted.
-    var center = { lat: 54.251186, lng: -4.463196 };
-    var mapOptions = {
-      zoom: 6,
-      center: center,
-    };
-
-    // eslint-disable-next-line
-    new google.maps.Map(document.getElementById("map"), mapOptions);
+    // // Renders the initial map when the component is mounted.
+    // var center = { lat: 54.251186, lng: -4.463196 };
+    // var mapOptions = {
+    //   zoom: 6,
+    //   center: center,
+    // };
+    // // eslint-disable-next-line
+    // new google.maps.Map(document.getElementById("map"), mapOptions);
   },
 };
 </script>

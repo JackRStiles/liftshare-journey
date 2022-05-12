@@ -9,9 +9,10 @@ export default {
 </script>
 
 <template>
-  <div class="columns">
+  <div class="column has-text-left"><br /></div>
+  <div class="columns content">
     <div class="column">
-      <h1 class="mb-1">Add Your Journey</h1>
+      <h1 class="mb-0">Add Your Journey</h1>
       <p>
         Whether you are looking to Liftshare as a driver or a passenger, listing
         your journey is the best way to find a match.
@@ -43,7 +44,7 @@ export default {
 <style>
 h1 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a.button:hover {

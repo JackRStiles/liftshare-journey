@@ -9,14 +9,14 @@ export default {
 </script>
 
 <template>
-  <header class="has-background-primary">
+  <header class="has-background-primary p-3">
     <router-link to="/">liftshare</router-link>
   </header>
   <div id="wrapper" class="columns m-0">
-    <div class="column is-one-quarter-desktop">
+    <div class="column is-one-quarter-desktop py-4 px-4">
       <router-view />
     </div>
-    <div class="column is-hidden-touch p-0">
+    <div id="mapWrapper" class="column is-hidden-touch p-0">
       <MapDisplay />
     </div>
   </div>
@@ -24,6 +24,16 @@ export default {
 
 <style>
 @import "@/assets/base.css";
+
+body {
+  letter-spacing: -0.5px;
+  font-weight: 300;
+}
+
+.label,
+strong {
+  font-weight: 500;
+}
 
 header {
   padding: 20px;
@@ -45,5 +55,17 @@ a:active {
 
 #wrapper {
   height: calc(100vh - 76px);
+}
+
+#mapWrapper {
+  background-image: url("@/assets/map-location-dot-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: center;
+}
+
+.router:hover {
+  color: #2641c6;
+  text-decoration: underline;
 }
 </style>

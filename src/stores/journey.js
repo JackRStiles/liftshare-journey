@@ -5,6 +5,8 @@ export const useJourneyStore = defineStore({
   state: () => ({
     origin: "",
     destination: "",
-    returnJourney: false,
+    returnBool: false,
+    depart: "",
+    return: "",
   }),
 });
