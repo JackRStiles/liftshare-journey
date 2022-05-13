@@ -6,6 +6,7 @@ Given the time, these are a few improvements I would make to the application to 
 - Stop the map re-rendering every time the state / store changes
 - Add validation to the fields
 - Add a display of the journeys total miles
+- Make better use of components
 
 ## Warning From The Developer
 For this to work you'll need a valid Google Maps API script tag in the index.html file. It will need to have an API key set up to use the Directions, Maps, and Places APIs or use the script tag provided by me if you have received one.
